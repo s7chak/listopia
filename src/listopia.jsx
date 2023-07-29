@@ -46,7 +46,7 @@ function FadeInWhenVisible({ children }) {
     };
   
     useEffect(() => {
-      const savedLists = Cookies.get("savedToDoLists");
+      const savedLists = localStorage.getItem("savedToDoLists");
       if (savedLists) {
         setSavedToDoList(JSON.parse(savedLists));
       }
@@ -69,44 +69,47 @@ function FadeInWhenVisible({ children }) {
       }
     };
 
-    const [listName, setListName] = useState(""); // State to store the name of the list
+    const [listName, setListName] = useState("");
 
-  const handleSaveClick = () => {
-    console.log("Saved");
-    if (listName.trim() === "") {
-      alert("Please enter a name for the list.");
-      return;
-    }
-
-    if (savedList.length === 0) {
-      alert("Your list is empty. Add some tasks before saving.");
-      return;
-    }
-
-    const newSavedList = {
-      name: listName.trim(),
-      items: savedList,
-    };
-    const existingSavedLists = Cookies.get("savedToDoLists");
-    let updatedSavedLists = [];
+    const handleSaveClick = () => {
+      console.log("Saved");
+      if (listName.trim() === "") {
+        alert("Please enter a name for the list.");
+        return;
+      }
     
-    if (existingSavedLists) {
-      updatedSavedLists = JSON.parse(existingSavedLists);
-    }
-
-    updatedSavedLists.push(newSavedList);
-
-    Cookies.set("savedToDoLists", JSON.stringify(updatedSavedLists));
-
-    setListName("");
-    console.log(savedToDoLists.length);
-    alert("List saved successfully!");
-  };
+      if (savedList.length === 0) {
+        alert("Your list is empty. Add some tasks before saving.");
+        return;
+      }
+    
+      const newSavedList = {
+        name: listName.trim(),
+        items: savedList,
+      };
+    
+      // Get the existing saved lists from localStorage
+      const existingSavedLists = localStorage.getItem("savedToDoLists");
+      let updatedSavedLists = [];
+    
+      if (existingSavedLists) {
+        updatedSavedLists = JSON.parse(existingSavedLists);
+      }
+    
+      updatedSavedLists.push(newSavedList);
+    
+      // Save the updated list of lists in localStorage
+      localStorage.setItem("savedToDoLists", JSON.stringify(updatedSavedLists));
+    
+      setListName("");
+      console.log(savedToDoLists.length);
+      alert("List saved.");
+      window.location.reload();
+    };
 
   const handleNukeClick = () => {
-    console.log('works');
-    console.log(Cookies.set("savedToDoLists"));
-    Cookies.remove("savedToDoLists");
+    localStorage.removeItem("savedToDoLists");
+    setToDoList([]);
     setSavedToDoList([]);
   }
 
@@ -128,13 +131,13 @@ function FadeInWhenVisible({ children }) {
         return todoList;
       });
       setSavedToDoList(updatedToDoLists);
-      Cookies.set("savedToDoLists", JSON.stringify(updatedToDoLists));
+      localStorage.setItem("savedToDoLists", JSON.stringify(updatedToDoLists));
 
     };
     
     return (
       <div className={`container`}>
-      <FadeInWhenVisible><h2> Listopia </h2></FadeInWhenVisible>
+      <FadeInWhenVisible><div className="gheader"> Listopia </div></FadeInWhenVisible>
       
         {(savedList!=null && savedList.length>0) && (
           <FadeInWhenVisible>
@@ -154,9 +157,9 @@ function FadeInWhenVisible({ children }) {
         <div className="fieldcontainer">
           <div className="taskadd">
             <input
-              className="taskfield"
+              className="taskfield tinput"
               type="text"
-              placeholder="Enter task name"
+              placeholder="Task name"
               value={taskName}
               onChange={(e) => setTaskName(e.target.value)}
               onKeyPress={handleKeyPress}
@@ -169,7 +172,7 @@ function FadeInWhenVisible({ children }) {
 
         <div className="listsave">
           <input
-            className="listname"
+            className="listname tinput"
             type="text"
             placeholder="Enter list name"
             value={listName}
@@ -201,9 +204,9 @@ function FadeInWhenVisible({ children }) {
               </tbody>
             </table>
 
-            {/* <div onDoubleClick={handleNukeClick} className="sbutton" title="Double click to delete all lists">
-              Nuke
-            </div> */}
+            <div onDoubleClick={handleNukeClick} className="sbutton" title="Double click to delete all lists">
+              Delete Lists
+            </div>
           </div>)}
 
       </div>

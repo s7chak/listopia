@@ -5,8 +5,8 @@ The lists are maintained using cookies.
 
 ## Features
 
-- Countdown or count up to a selected date and time
-- Save anniversaries or events with a name and date
+- Make multiple lists and save with name
+- Offload lists from mind, lists are saved per user
 
 ## Installation
 

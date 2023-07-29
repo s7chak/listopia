@@ -1,8 +1,9 @@
 :root {
-  font-family: "Rajdhani", sans-serif !important;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 1px;
   margin: 0;
   #dark {
-		--lighter: #CBD6F0;
+		--lighter: #a2bcf9;
 		--accent: #6484cd;
 		--background-primary: #0A0D14;
 		--background-secondary: #141A29;
@@ -25,8 +26,8 @@ body {
   background-color: var(--background-primary);
   color: var(--accent);
   transition: background-color 1s ease-in-out;
-  height: 100vh;
   width: 100vw;
+  
   margin: 0;
 }
 
@@ -34,7 +35,7 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,8 +48,12 @@ body {
 }
 
 .gheader {
-  font-size: 16px;
+  position: relative;
+  margin-top: 2em;
+  font-size: 30px;
   font-weight: 800;
+  margin-bottom: 2em;
+  letter-spacing: 0.1em;
 }
 
 .all-lists {
@@ -58,6 +63,7 @@ body {
   border: 1px solid var(--accent);
   border-radius: 0.5em;
   padding: 1em;
+  margin: 2em;
 }
 .list-table {
   width: 100%;
@@ -79,7 +85,7 @@ body {
   color: var(--background-primary);
   background-color: var(--accent);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 1em;
+  border-radius: 1em !important;
 }
 
 .list-table tbody tr {
@@ -88,8 +94,15 @@ body {
 }
 
 .list.selected {
-  background-color: var(--accent);
+  background-color: var(--lighter);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.list-table tbody tr.list.selected {
+  color: var(--background-primary);
+  background-color: var(--accent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
 }
 
 
@@ -106,7 +119,7 @@ body {
   padding-bottom: 30px;
 }
 .taskadd {
-  width: 40em;
+  width: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -131,7 +144,7 @@ body {
   font-size: 16px;
   border: 2px solid var(--accent);
   color: var(--text-color-light);
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   background-color: var(--background-secondary-alt);
 }
 
@@ -169,10 +182,14 @@ body {
   border-radius: 0.4em;
   font-size: 16px;
   cursor: pointer;
-  color: var(--lighter);
+  color: var(--accent);
   background-color: var(--background-secondary);
   border: 0.15em solid var(--accent);
-  
+}
+.sbutton:hover,
+.sbutton:focus {
+  background-color: var(--background-primary);
+  color: var(--lighter);
 }
 
 .taskfield {
@@ -180,9 +197,10 @@ body {
   padding: 10px;
   font-size: 16px;
   border: 2px solid var(--accent);
+  border-radius: 0.5em;
   background-color: var(--background-primary) !important;
   color: var(--text-color-light);
-  border-radius: 0.2rem;
+  
 }
 .listname {
   width: 10em;
@@ -191,7 +209,7 @@ body {
   border: 2px solid var(--accent);
   background-color: var(--background-primary) !important;
   color: var(--text-color-light);
-  border-radius: 0.2rem;
+  border-radius: 0.5em;
 }
 
 .listcontainer {
@@ -202,11 +220,16 @@ body {
   justify-content: center;
 }
 
+.tinput {
+  font-family: 'Source Sans Pro', sans-serif !important;
+}
+
 .task-item {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-items: center;
+  color: var(--lighter);
 }
 .task-circle {
   width: 20px;
