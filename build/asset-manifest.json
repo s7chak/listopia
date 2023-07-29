@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/listopia/static/css/main.537f8db7.css",
+    "main.js": "/listopia/static/js/main.95a6fc59.js",
+    "index.html": "/listopia/index.html",
+    "main.537f8db7.css.map": "/listopia/static/css/main.537f8db7.css.map",
+    "main.95a6fc59.js.map": "/listopia/static/js/main.95a6fc59.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.537f8db7.css",
+    "static/js/main.95a6fc59.js"
+  ]
+}

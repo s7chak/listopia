@@ -1,7 +1,7 @@
-# The ToDoist's App
+# The Listopia App
 
-This is a simple experimental React app to maintain a list of ToDos and offload them from your brain.
-The list is maintained using cookies.
+This is a simple experimental React app to maintain a list or more of ToDos and offload them from your brain.
+The lists are maintained using cookies.
 
 ## Features
 
@@ -13,13 +13,13 @@ The list is maintained using cookies.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/s7chak/todoism.git
+   git clone https://github.com/s7chak/listopia.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd todoism
+   cd listopia
    ```
 
 3. Install the dependencies:

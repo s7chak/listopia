@@ -1,7 +1,7 @@
 {
-  "name": "todoism",
+  "name": "listopia",
   "version": "1.0.0",
-  "homepage": "https://s7chak.github.io/todoism",
+  "homepage": "https://s7chak.github.io/listopia",
   "private": false,
   "scripts": {
     "build": "react-scripts build",

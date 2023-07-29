@@ -1,4 +1,4 @@
-import ToDoism from "./todoism";
+import Listopia from "./listopia";
 import React, { createContext, useState } from "react";
 import "./myform.css";
 
@@ -11,7 +11,7 @@ export const App = () => {
 	}
 	return (
 		<div className="app" id={theme}>
-      		<ToDoism changeTheme={toggleTheme} />
+      		<Listopia changeTheme={toggleTheme} />
     	</div>
 	);
 };

@@ -7,7 +7,7 @@ import "./myform.css";
 ReactDOM.render(
   <Router>
     <Routes>
-      <Route path="/todoism" element={<App />} />
+      <Route path="/listopia" element={<App />} />
     </Routes>
   </Router>,
   document.getElementById('root')
