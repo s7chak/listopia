@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/listopia/static/css/main.c682b5d7.css",
-    "main.js": "/listopia/static/js/main.4b64df4c.js",
+    "main.css": "/listopia/static/css/main.f60eea2c.css",
+    "main.js": "/listopia/static/js/main.76bf53f9.js",
     "index.html": "/listopia/index.html",
-    "main.c682b5d7.css.map": "/listopia/static/css/main.c682b5d7.css.map",
-    "main.4b64df4c.js.map": "/listopia/static/js/main.4b64df4c.js.map"
+    "main.f60eea2c.css.map": "/listopia/static/css/main.f60eea2c.css.map",
+    "main.76bf53f9.js.map": "/listopia/static/js/main.76bf53f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.c682b5d7.css",
-    "static/js/main.4b64df4c.js"
+    "static/css/main.f60eea2c.css",
+    "static/js/main.76bf53f9.js"
   ]
 }
